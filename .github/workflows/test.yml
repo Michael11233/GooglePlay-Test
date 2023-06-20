@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  google-play:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Top lvl
+        run: ls
+        
+      - name: Test 1 lvl deep
+        run: |
+          cd .github/workflows
+          ls
+
+      - name: Where am I now?
+        run: ls
